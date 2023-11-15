@@ -54,7 +54,7 @@ body{
 .navbar a{
     font-size: 1.7rem;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 700;
     margin-left: 3.5rem;
     transition: 0.3s;
 }
@@ -115,17 +115,26 @@ section{
 .home-content h1 span{
     color: var(--text-color);
 }
+
 .home-content .text-animate{
     position: relative;
     width: 32.8rem;
 }
+
 .home-content .text-animate h3{
     position: relative;
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
 } 
+
 .home-content h3::before{
     content: '';
     position: absolute;
@@ -219,6 +228,21 @@ section{
 .btn-box .btn:hover::before{
     width: 100%;
 }
+@keyframes homeBgText{
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+    65%,
+    85%{
+        background-position: 0 0;
+    }
+}
+
+
+
+
 .home-sci{
     position: absolute;
     bottom: 4rem;
@@ -353,12 +377,18 @@ span{
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+@keyframes aboutSpinner{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 .about-content{
     text-align: center;
 }
 .about-content h3{
-    font-size: 2.6rem;
+    font-size: 2.2rem;
 }
 .about-content p{
     font-size: 1.6rem;
@@ -738,3 +768,4 @@ span{
 .footer-iconTop a:hover i{
     color: var(--main-color);
 }
+
